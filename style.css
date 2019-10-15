@@ -6,7 +6,7 @@
  }
 p {
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(0, 0, 0);
 }
@@ -22,8 +22,8 @@ h1 {
 
 td {
     padding: 8px;
-    margin: 10px;
-    border: 10px;
+    margin: 8px;
+    border: 8px;
     text-align: center;
     color :orangered ;
 }

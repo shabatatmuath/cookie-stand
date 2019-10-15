@@ -78,7 +78,7 @@ function newRow() {
         for (var j = 0; j < cookiesShop.length; j++) {
             hourlyTotal = hourlyTotal + cookiesShop[j].cookiesEachHourArray[i];
             hTotal += cookiesShop[j].cookiesEachHourArray[i];
-            console.log(hTotal);
+            
         }
         var tdElement = document.createElement('td');
         tdElement.textContent = hourlyTotal;
