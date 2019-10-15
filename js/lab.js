@@ -2,6 +2,19 @@
 var hours = [' 6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var cookiesShop = [];
 var Tables = document.getElementById('Table');
+
+function Store(name, min, max, avg) {
+    this.name = name;
+    this.min = min;
+    this.max = max;
+    this.avg = avg;
+    this.avgArray = [];
+    this.cookiesEachHourArray = [];
+    this.totalCookies = 0;
+    cookiesShop.push(this);
+}
+
+
 function Header() {
     var tableRow = document.createElement('tr');
     for (var i = 0; i <= hours.length; i++) {
@@ -15,16 +28,6 @@ function Header() {
 
     Tables.appendChild(tableRow);
 };
-function Store(name, min, max, avg) {
-    this.name = name;
-    this.min = min;
-    this.max = max;
-    this.avg = avg;
-    this.avgArray = [];
-    this.cookiesEachHourArray = [];
-    this.totalCookies = 0;
-    cookiesShop.push(this);
-}
 Store.prototype.CustHourly = function () {
     for (var v = 0; v <= hours.length; v++) {
         var singleh = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
