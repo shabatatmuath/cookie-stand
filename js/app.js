@@ -91,11 +91,11 @@ var Lima = {
         }
         return this.hourlysales;
     },}
+Lima.cookieshourlyFunction();
     
 var hour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm',
     '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-Lima.cookieshourlyFunction();
 alla = ["Seattle", "Tokyo", "Dubai", "Paris", "Lima"];
 allb = [seattle, Tokyo, Dubai, Paris, Lima];
 for (let j = 0; j < alla.length; j++) {
@@ -105,7 +105,7 @@ for (let j = 0; j < alla.length; j++) {
     for (i = 0; i < 15; i++) {
         count += allb[j].hourlysales[i];
         document.write("<li>");
-        document.write(hour[i], ": ", allb[j].hourlysales[i], " Cookies.");
+        document.write(hour[i], ": ", allb[j].hourlysales[i]);
         document.write("<br>");
         document.write("</li>");
     }
