@@ -45,7 +45,7 @@ store.prototype.renderRow = function(table){
 
 function header() {
   var hourRow = add('tr',table);
-  add('th',hourRow,'Location//hours');
+  add('th',hourRow,'Location\\hours');
   for(var i = 0; i < hours.length; i++) {
     add('th', hourRow, hours[i]);
   }

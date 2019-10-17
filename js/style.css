@@ -4,6 +4,7 @@ body {
 table{
     margin: auto;
     padding-bottom: 10px;
+    margin-top: 120px;
     
     
 }
@@ -82,5 +83,9 @@ legend{
 h1{
     color:  darkorange;
     font-family: cursive;
+    position: fixed;
+    top: 0;
+    opacity: .5;
+    
 
 }
