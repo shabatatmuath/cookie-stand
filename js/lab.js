@@ -11,7 +11,7 @@ function add(name, container, text) {
     element.textContent = text;}
   return element;}
 
-function store(location,min,max,avg){
+function Store(location,min,max,avg){
   this.location = location;
   this.min = min;
   this.max = max;
@@ -20,21 +20,21 @@ function store(location,min,max,avg){
   this.totalSale = 0;
   this.generateHourlySales();}
 
-store.prototype.avgaregeCus = function() {
+Store.prototype.avgaregeCus = function() {
   var rang = this.max - this.min;
   var rand = Math.random() * rang + this.min;
   return Math.ceil(rand);
 };
 
 var hours = ['6 am','7 am','8 am','9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm'];
-store.prototype.generateHourlySales = function() {
+Store.prototype.generateHourlySales = function() {
   for (var i = 0; i < hours.length ; i++) {  
     var cookperHour = Math.ceil(this.avgaregeCus() * this.avgcookie);
     this.cookArray.push( cookperHour );    
     this.totalSale += cookperHour;}
 };
 
-store.prototype.renderRow = function(table){
+Store.prototype.renderRow = function(table){
   var shopRow = add('tr',table);
   add('td',shopRow, this.location);
   for (var i = 0; i < this.cookArray.length; i++) {
@@ -82,11 +82,11 @@ function createRowf() {
 }
 
 var shops = [];
-shops.push(new store('Seattle', 23, 65, 6.3));
-shops.push(new store('Tokyo', 3, 24, 1.2));
-shops.push(new store('Tubai', 11, 38, 3.7));
-shops.push(new store('Paris', 20, 38, 2.3));
-shops.push(new store('Lima', 2, 16, 4.6));
+shops.push(new Store('Seattle', 23, 65, 6.3));
+shops.push(new Store('Tokyo', 3, 24, 1.2));
+shops.push(new Store('Tubai', 11, 38, 3.7));
+shops.push(new Store('Paris', 20, 38, 2.3));
+shops.push(new Store('Lima', 2, 16, 4.6));
 
 header();
 
@@ -103,7 +103,7 @@ function submitHandler(event) {
   var max = parseInt(event.target.max.value);
   var avgSales = parseFloat(event.target.avgSales.value);
 
-  var newShop = new store(locationName, min, max, avgSales);
+  var newShop = new Store(locationName, min, max, avgSales);
   shops.push(newShop);
   table.removeChild(rowf);
   newShop.renderRow(table);
